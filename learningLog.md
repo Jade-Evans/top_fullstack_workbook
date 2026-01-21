@@ -15,3 +15,5 @@ I used width 100% to stretch the footer along the whole length of the window, an
 
 ## CREATE A RESPONSIVE LAYOUT WITH SIDEBAR
 https://kinsta.com/blog/responsive-web-design/
+
+
