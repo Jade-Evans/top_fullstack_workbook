@@ -22,13 +22,19 @@ const signupBtn = document.getElementById("signupButton");
 const signupModal = document.getElementById("signupModal");
 const loginModal = document.getElementById("loginModal");
 const landingPageMain = document.getElementById("landingPageMain");
+const overlayWrapper = document.getElementById("overlayWrapper");
+
 
 //login modal box appears on click
 loginBtn.addEventListener("click",()=>{
+    overlayWrapper.style.display="flex";
     loginModal.style.display="flex";
+    
 })
 signupBtn.addEventListener("click",()=>{
+    overlayWrapper.style.display="flex";
     signupModal.style.display="flex";
+    
 })
 
 newModuleBtn.addEventListener("click",()=>{

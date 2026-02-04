@@ -43,12 +43,8 @@ main{
     flex-direction: column;
     align-content: center;
     align-items: center;
-    z-index: 1;
 }
-#landingPageContent{
-    z-index: 1;
-}
-.overlayWrapper{
+#overlayWrapper{
   position: fixed; /* Sit on top of the page content */
   display: none; 
   width: 100%; /* Full width (cover the whole page) */
@@ -57,8 +53,9 @@ main{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 12; /
+  background-color: rgba(96, 101, 98, 0.7); /* Black background with opacity */
+  z-index: 2; 
+  
 }
 #landingPagecurrentDateTime{
     align-self: flex-end;
@@ -70,20 +67,25 @@ main{
 .modal{
     display:none;
     position: fixed;
-    width: 50%;
-    height: auto;
+    width: 55%;
+    height: 40%;
     top: 2rem;
-    margin-top: 2rem;
-    padding: 1rem;
-    z-index: 3;
+    margin-top: 7rem;
+    padding: 2rem;
+    z-index: 9999;
     flex-direction: column;
-    border-radius: 0.5rem;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,78,0.4); /* Black w*/
-
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1rem;
+    color: white;
+    background-color:  rgb(37, 41, 40);
+    font-size: 1.5rem;
+    border: 0.1rem solid white;
 }
-.modalContent{
-    width: 80%;
+.modalContent h2{
+    font-size: 2.5rem;
+    font-weight: 200;
 }
 aside{
     flex:1;
