@@ -1,13 +1,23 @@
 html, body{
-    height: 100%;
+    height: 100%; 
     font-family: montserrat;
 }
 body{
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    
+    flex-direction: column;  
 }
+#workbookMainContainer{
+    display: flex;
+}
+#workbookContent{
+    width: 80vw;
+}
+
+#workbookSideBar{
+    width: 20vw;
+}
+
+
 header, footer{
     position: sticky;
     background-color: rgb(61, 75, 70);
@@ -123,17 +133,19 @@ hgroup{
     border: solid 0.5rem rgb(91, 102, 98);
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
     border-radius: 1rem;
-    padding: 1.5rem 0.5rem;
+    padding: 0.5rem;
+    width: 50%;
     margin: auto;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-.moduleDetails>*{
-    font-size: 1.5rem;
+.detail>*{
+    font-size: 1rem;
     margin:0;
-    padding: 0.25rem;
+    padding: 0.1rem;
 }
 
 
