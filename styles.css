@@ -6,22 +6,15 @@ body{
     display: flex;
     flex-direction: column;  
 }
-#workbookMainContainer{
-    display: flex;
-}
-#workbookContent{
-    width: 80vw;
-}
-
 #workbookSideBar{
-    width: 20vw;
+    width: 20%;
+    
 }
 
 
 header, footer{
     position: sticky;
     background-color: rgb(61, 75, 70);
-    
     padding: 0.25rem;
     display: flex;
     align-items: center;
@@ -43,7 +36,7 @@ footer{
 }
 main{
     display: flex;   
-    overflow: hidden; 
+    flex-direction: column;
 }
 aside, section{
     overflow-y: auto;
@@ -147,7 +140,33 @@ hgroup{
     margin:0;
     padding: 0.1rem;
 }
-
+.imageContainer{
+    width: 60vw;
+    height:auto;
+    
+   
+    
+}
+.imageContent{
+    display:flex;
+    gap: 2rem;
+    margin: 1rem;
+}
+#emvsremimg{
+    width:100%;
+    max-width: 100%;
+    object-fit: cover;
+    border: 2px darkolivegreen solid;
+    border-radius: 1rem;
+    flex:1
+}
+.imageNote{
+    border-radius: 1rem;
+    background-color: darkolivegreen;
+    flex: 1;
+    padding: 1rem;
+    color: white;
+}
 
 /*INDEX/LANDING PAGE CSS*/
 /* #landingPageContent{
@@ -206,12 +225,9 @@ nav-bar a, .landingPageButtonDiv button:hover{
 /* #template_container{
    width: 100%;
 }
-#workbookMainContainer{
-    display: flex;
 
-}
 #workbookSideBar{
-    background-color: teal;
+   
 }
 .toolkit{
     color: white;  

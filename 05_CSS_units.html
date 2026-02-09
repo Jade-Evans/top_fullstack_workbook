@@ -8,21 +8,21 @@
   <title>CSS Units</title>
 </head>
 <body>
-  <div id="template_container">
-    <header>
-      <div class="logo">🌱SKILLROOTS</div>
-          <ul class ="nav-bar">
-              <li><a  href = "index.html">🌿home</a></li>
-              <li><a  href = "00_contents.html">🌿dashboard</a></li>
-              <li><a  href = "XlearningJournal.html">🌿growth journal</a></li>
-              <li><a  href="Yresources.html">🌿library</a></li>
-              <li><a  href="Zsettings.html">🌿personalise</a></li>
-              <li><a  href="modules_template.html">🌿module template</a></li>
-          </ul>
-    </header>
-    <main id="workbookMainContainer">
-      <div id="workbookContent">
-        <hgroup>
+ <header>
+    <div class="logo">🌱SKILLROOTS</div>
+        <ul class ="nav-bar">
+            <li><a  href = "index.html">🌿home</a></li>
+            <li><a  href = "00_contents.html">🌿dashboard</a></li>
+            <li><a  href = "XlearningJournal.html">🌿growth journal</a></li>
+            <li><a  href="Yresources.html">🌿library</a></li>
+            <li><a  href="Zsettings.html">🌿personalise</a></li>
+            <li><a  href="modules_template.html">🌿module template</a></li>
+        </ul>
+  </header>
+  <main id="workbookMainContainer">
+    <div class="mainContent">
+      <div class="non-workbook">
+       <hgroup>
           <h1 class="pageHeader moduleHeader">MY VIRTUAL WORKBOOK</h1>
           <h2 class="pageTagline">Quiet Focus🍃Steady Progress</h2>
         </hgroup>
@@ -39,21 +39,85 @@
           clear direction the next time you return to your studies.  
         </div>
       </div>
-      <div id="workbookSideBar">
-        <ul id="toolkit">
-          <li class="tool">NOTES</li>
-          <li class="tool">CHECKLIST</li>
-          <li class="tool">CODE EDITOR</li>
-          <li class="tool">MEDIA UPLOAD</li>
-          <li class="tool">RESOURCE LOG</li>
+      <div id="workbookContent">
+        <ul class="moduleNotesList">
+          <li class="note">In CSS, <strong>units</strong> are used to define the size of fonts.</li>
+          <li class="note">Units can fall into two categories:
+            <ol>
+              <li><strong>Absolute Units:</strong>The size of an absolute unit is fixed will not change in relation
+              to anything else on the page. In web development, px is really the only absolute unit we should be using (others
+              like inch or cm are more relevant for printing).</li>
+              <li><strong>Relative Units:</strong> The size of an element defined with a relative unit can change in relation to 
+                other elements on the page, such as the root element or an element's parent. 
+              </li>
+            </ol>
+          </li>
+          <li class="note">
+            <table>
+              <caption>Types of relative units:</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Unit</th>
+                  <th scope="col">Relative To</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Value/Data Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">em</th>
+                  <td>the size of the element or parent</td>
+                  <td>1em is equal to the font size, so i.e. if the font size is of the parent is 12px and the em is 4em the font size would be 48px
+                  </td>
+                  <td rowspan="5">&lt;length&gt;</td>
+                </tr>
+                <tr>
+                  <th scope="row">rem</th>
+                  <td>root or html font size</td>
+                  <td>This is <strong>recommended</strong>, as it works the same as the above without having to keep track 
+                    of parent element sizes, so is more predictable. 
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">vw</th>
+                  <td>the viewport width.</td>
+                  <td>1vw = 1% of the viewport width.</td>
+                </tr>
+                <tr>
+                  <th scope="row">vh</th>
+                  <td>the viewport height.</td>
+                  <td>1vh = 1% of the viewport height.</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="note">
+            
+          </li>
+          <li class="note"></li>
         </ul>
-
+        
+          <h2>rems vs ems</h2>
+          <div class="imageContent">
+            <div class="imageContainer">
+              <img src="em vs rem.png" id="emvsremimg">
+            </div>
+            <p class="imageNote">The image on the left is useful for showing the difference between em and rem relative units. 
+              Both pieces are code are the same except for the use of em on the first example, and rem on the second. 
+              As em is relative to its parent, it will get progressively bigger each time. Rem, on the other hand, 
+              remains relative to the root/html font size throughout, so the sizing is consistent regardless of the degree
+              of parent/child. 
+            </p>
+          </div>
+        </div>
       </div>
-    </main>
-    
-    <footer>
-      <p>🌱SKILLROOTS &copy; 2026</p>
-    </footer>
+      
+    </div>     
+      
+  </main>
+  <footer>
+    <p>🌱SKILLROOTS &copy; 2026</p>
+  </footer>
   
   <script src="script.js"></script>
 </body>
