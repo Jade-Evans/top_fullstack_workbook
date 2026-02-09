@@ -21,3 +21,6 @@ https://stackoverflow.com/questions/53862778/how-to-get-the-current-london-time-
 
 ## CREATING A MODAL
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+
+## CREATING A RANDOM QUOTE GENERATOR WITH API
+https://dev.to/codehuntersharath/building-a-random-quote-generator-with-api-using-html-css-and-javascript-2026

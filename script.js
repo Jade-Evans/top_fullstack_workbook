@@ -82,5 +82,11 @@ const picker = new Pikaday({
   theme: 'dark-theme', // optional custom class
 });
     
+//DASHBOARD LOGIC//
 
+dashboardToolsArray.forEach(dashboardTool=>{
+    dashboardTool.addEventListener("change",()=>{
+        let checkedDashboardTool = dashboardTool.checked;
+    })
+})
 
