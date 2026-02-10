@@ -167,22 +167,22 @@ hgroup{
     padding: 1rem;
     color: white;
 }
-.rgb{
+#colourFormatTable tr.rgb td{
     background-color: rgb(30, 144, 255);
 }
-.rgba{
+#colourFormatTable tr.rgba td{
     background-color: rgb(30, 144, 255, 0.2);
 }
-.hsl{
+#colourFormatTable tr.hsl td{
     background-color: hsl(210, 100%, 56%);
 }
-.hsla{
+#colourFormatTable tr.hsla td{
     background-color: hsl(210, 100%, 56%, 0.5);
 }
-.hex{
+#colourFormatTable tr.hex td{
     background-color: #1e90ff;
 }
-.namedColour{
+#colourFormatTable tr.namedColours td{
     background-color: dodgerblue;
 }
 
