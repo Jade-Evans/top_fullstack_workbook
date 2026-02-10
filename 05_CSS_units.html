@@ -27,7 +27,7 @@
           <h2 class="pageTagline">Quiet Focus🍃Steady Progress</h2>
         </hgroup>
         <div class="moduleDetails"> 
-          <div class="detail"><h3 class="moduleName">TOPIC:</h3><p caddlass="topicName">CSS Units and Values</p></div>
+          <div class="detail"><h3 class="moduleName">TOPIC:</h3><p class="topicName">CSS Units and Values</p></div>
           <div class="detail"><h3 class="sectionName">COURSE DETAILS:</h3><p class="courseDetails">The Odin Project (JS FS), Intermediate HTML/CSS</p></div>
         </div>
         <div class="workspaceIntro">Welcome back to your module workspace. <br>
@@ -41,8 +41,8 @@
       </div>
       <div id="workbookContent">
         <ul class="moduleNotesList">
-          <li class="note">In CSS, <strong>units</strong> are used to define the size of fonts.</li>
-          <li class="note">Units can fall into two categories:
+          <li class="note">In CSS, <strong>units</strong> define the size or length of many properties, including fonts, spacing, layout, and more.</li>
+          <li class="note">These Units fall into two categories:
             <ol>
               <li><strong>Absolute Units:</strong>The size of an absolute unit is fixed will not change in relation
               to anything else on the page. In web development, px is really the only absolute unit we should be using (others
@@ -91,13 +91,9 @@
               </tbody>
             </table>
           </li>
-          <li class="note">
-            
-          </li>
-          <li class="note"></li>
         </ul>
         
-          <h2>rems vs ems</h2>
+        <h2>rems vs ems</h2>
           <div class="imageContent">
             <div class="imageContainer">
               <img src="em vs rem.png" id="emvsremimg">
@@ -108,7 +104,111 @@
               remains relative to the root/html font size throughout, so the sizing is consistent regardless of the degree
               of parent/child. 
             </p>
+            
           </div>
+          <p>Aside from the above, there are loads of different values/data types in CSS. Some of the most common include:</p>
+          <h2 class="numberslengthspercentages">Numbers, Lengths & Percentages</h2>
+          <table>
+            <caption>A table summarising some key data types in CSS:</caption>
+            <thead>
+              <th scope="col">Data Type</th>
+              <th scope="col">Description</th>
+              <th scope="col">Example</th>
+              <th scope="col">Category</th>
+            </thead>
+            <tr>
+              <th scope="row">&lt;integer&gt;</th>
+              <td>Any whole number</td>
+              <td>56, 1209, -89, -3</td>
+              <td>Numbers, Lengths or Percentages</td>
+            </tr>
+              <tr>
+              <th scope="row">&lt;number&gt;</th>
+              <td>Refers to any number, which could include integers or numbers with decimals too.</td>
+              <td>56, 2.3, -99, -0.987</td>
+              <td>Numbers, Lengths or Percentages</td>
+            </tr>
+              <tr>
+              <th scope="row">&lt;dimension&gt;</th>
+              <td>Refers to a number with a unit attached to it. <strong>Note: this is an umbrella term, encompassing
+                data types like &lt;length&gt;, &lt;angle&gt;, &lt;time&gt; and &lt;resolution&gt;
+              </strong></td>
+              <td>0.3s, 45deg, 20px, 6in</td>
+              <td>Numbers, Lengths or Percentages</td>
+            </tr>
+              <tr>
+              <th scope="row">&lt;percentage&gt;</th>
+              <td>Refers to a percentage or fraction of a number; percentages are always relative to another quantity.</td>
+              <td>50%, 22% etc.</td>
+              <td>Numbers, Lengths or Percentages</td>
+            </tr>
+            <table>
+              <caption>Common CSS Colour Formats</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Format</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Value Range</th>
+                  <th scope="col">Example</th>
+                </tr>
+              </thead>
+              <tbody class="hex">
+                <tr>
+                  <th scope="row">HEX</th>
+                  <td>Hexadecimal notation</td>
+                  <td>Represents red, green, and blue values in base‑16.</td>
+                  <td>#RRGGBB or #RGB (00–FF)</td>
+                  <td>#1e90ff</td>
+                </tr>
+              </tbody>
+              <tbody class="rgb">
+                <tr>
+                  <th scope="row">RGB()</th>
+                  <td>Functional notation</td>
+                  <td>Defines colour using red, green, and blue channels.</td>
+                  <td>0–255 or 0–100%</td>
+                  <td>rgb(30, 144, 255)</td>
+                </tr>
+              </tbody>
+              <tbody class="rgba">
+                <tr>
+                  <th scope="row">RGBA()</th>
+                  <td>Functional notation</td>
+                  <td>RGB with an alpha (opacity) channel.</td>
+                  <td>0–255 + alpha (0–1)</td>
+                  <td>rgba(30, 144, 255, 0.2)</td>
+                </tr>
+              </tbody>
+              <tbody class="hsl">
+                <tr>
+                  <th scope="row">HSL()</th>
+                  <td>Functional notation</td>
+                  <td>Defines colour using hue, saturation, and lightness.</td>
+                  <td>Hue: 0–360deg<br>S/L: 0–100%</td>
+                  <td>hsl(210, 100%, 56%)</td>
+                </tr>
+              </tbody>
+              <tbody class="hsla">
+                <tr>
+                  <th scope="row">HSLA()</th>
+                  <td>Functional notation</td>
+                  <td>HSL with an alpha (opacity) channel.</td>
+                  <td>Hue: 0–360deg<br>S/L: 0–100%<br>Alpha: 0–1</td>
+                  <td>hsla(210, 100%, 56%, 0.5)</td>
+                </tr>
+              </tbody>
+              <tbody class="namedColours">
+                <tr>
+                  <th scope="row">Named Colours</th>
+                  <td>Keyword</td>
+                  <td>Predefined colour names recognised by CSS.</td>
+                  <td>N/A</td>
+                  <td>dodgerblue</td>
+                </tr>
+              </tbody>
+            </table>
+          </table>
         </div>
       </div>
       

@@ -167,6 +167,24 @@ hgroup{
     padding: 1rem;
     color: white;
 }
+.rgb{
+    background-color: rgb(30, 144, 255);
+}
+.rgba{
+    background-color: rgb(30, 144, 255, 0.2);
+}
+.hsl{
+    background-color: hsl(210, 100%, 56%);
+}
+.hsla{
+    background-color: hsl(210, 100%, 56%, 0.5);
+}
+.hex{
+    background-color: #1e90ff;
+}
+.namedColour{
+    background-color: dodgerblue;
+}
 
 /*INDEX/LANDING PAGE CSS*/
 /* #landingPageContent{
