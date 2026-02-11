@@ -24,3 +24,10 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
 
 ## CREATING A RANDOM QUOTE GENERATOR WITH API
 https://dev.to/codehuntersharath/building-a-random-quote-generator-with-api-using-html-css-and-javascript-2026
+
+NOTES:
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+This can be replaced by inset:0 - with position: fixed; it tells the element to stretch to all four sides of the viewport (very useful for overlays).

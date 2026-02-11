@@ -19,7 +19,7 @@ const progressTableButtons = document.getElementById("progressTableButtons");
 const newModuleBtn = document.getElementById("createNewModule");
 const loginBtn = document.getElementById("loginButton");
 const signupBtn = document.getElementById("signupButton");
-const signupModal = document.getElementById("signupModal");
+const signUpModal = document.getElementById("signUpModal");
 const loginModal = document.getElementById("loginModal");
 const landingPageMain = document.getElementById("landingPageMain");
 const overlayWrapper = document.getElementById("overlayWrapper");
@@ -33,7 +33,10 @@ loginBtn.addEventListener("click",()=>{
 })
 signupBtn.addEventListener("click",()=>{
     overlayWrapper.style.display="flex";
-    signupModal.style.display="flex";
+    overlayWrapper.style.justifyContent="center";
+    overlayWrapper.style.alignItems="center";
+    signUpModal.style.display="flex";
+    signUpModal.style.justifyContent="center";
     
 })
 

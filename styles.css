@@ -3,6 +3,7 @@
     font-weight: 100;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
   display: flex;
@@ -44,19 +45,7 @@ main{
     align-content: center;
     align-items: center;
 }
-#overlayWrapper{
-  position: fixed; /* Sit on top of the page content */
-  display: none; 
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(96, 101, 98, 0.7); /* Black background with opacity */
-  z-index: 2; 
-  
-}
+
 #landingPagecurrentDateTime{
     align-self: flex-end;
 }
@@ -64,28 +53,68 @@ main{
     margin: 0;
 }
 /*sign in/log in modals*/
-.modal{
+#overlayWrapper{
+  position: fixed; /* Sit on top of the page content */
+  display: none; 
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  inset: 0;
+  background-color: rgba(96, 101, 98, 0.7); /* Black background with opacity */
+  z-index: 2; 
+}
+#signUpModal{
     display:none;
-    position: fixed;
-    width: 55%;
-    height: 40%;
-    top: 2rem;
-    margin-top: 7rem;
-    padding: 2rem;
+    /* max-width: 50%;
+    max-height: 50%; */
+    object-fit: contain;
+    padding: 1rem;
     z-index: 9999;
+    border-radius: 1rem;
+    background-color: rgb(61, 75, 70);
+    border: 0.1rem solid white;
+    font-size: 0.5rem;
+}
+.modalContent{
+    min-width:0;
+    min-height: 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    border-radius: 1rem;
+    font-size: 2em;
+    gap: 1rem;
     color: white;
-    background-color:  rgb(37, 41, 40);
-    font-size: 1.5rem;
-    border: 0.1rem solid white;
+    
+}
+.close, .submit{
+    color: rgb(61, 75, 70);
+    font-weight: 400;
+    padding: 0 0.25rem;
+    background-color: rgb(197, 211, 205);
+    border: 1px white solid;
+    border-radius: 0.5rem;
+    font-size: 1rem; 
+    padding: 0.5rem 0.75rem;
+}
+.close:hover, .submit:hover{
+    box-shadow: 0.5rem 0.5rem 0.8rem rgb(23, 29, 27);
+}
+
+.close{
+    align-self: flex-end;
+    
+}
+.submit{
+    align-self: center;
+    padding: 0.5em;
 }
 .modalContent h2{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 200;
+}
+#signUpDetails{
+   text-align: left;
+   margin: 0.75rem;
 }
 aside{
     flex:1;
@@ -135,9 +164,10 @@ button{
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
     border-radius: 0.5rem;
 }
-button:hover{
+.close:hover, .submit:hover, button:hover{
     background-color: rgb(35, 43, 40);
     transition: 0.3s ease;
+    color: white;
 }
 
 /*DASHBOARD*/
