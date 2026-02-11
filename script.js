@@ -90,16 +90,10 @@ newModuleBtn.addEventListener("click",()=>{
             <input type="checkbox" class="dailyNoteChecked" id="tool3" name="check" value="dailyNotes">
             
         </td>
-        <td><button>Save</button></th>`;
+        <td><button class="saveRowBtn">Save</button></th>`;
     tbody.appendChild(newModuleRow);
-    
-        const saveEditToggle = document.createElement("button");
-        saveEditToggle.textContent="Save";
-    if(!saveEditToggle){
-        progressTableButtons.appendChild(saveEditToggle);
-    }
-
-
+    const saveRowBtn = document.querySelector(".saveRowBtn");//create a variable to refer to the save row buttons created above//
+    saveRowBtn.addEventListener("click", ()=>saveRow(newModuleRow)); //add EL to run saveRow fn on that row when that saverow button is clicked//
 });
             
 // //Pikaday Calendar logic:

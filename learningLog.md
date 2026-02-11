@@ -52,4 +52,20 @@ Object.values(modals) is like pulling out all the compartments at once and putti
 
 
 Now you can do something to each one in a simple loop.
+## COPILOT NOTES FOR LEARNING HOW TO USE LOCALSTORAGE TO SAVE DATA INPUT ON PROGRESS TABLE (DASHBOARD):
+
+# Think of your progress table as:
+- The UI → what the user sees
+- localStorage → the database
+# Every time the user clicks Save:
+- Read the values from that row
+- Turn them into a JS object
+- Push that object into an array
+- Save the array to localStorage
+# When the page loads:
+- Read the array from localStorage
+- Build table rows from it
+
+
+
 
