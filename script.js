@@ -92,7 +92,7 @@ newModuleBtn.addEventListener("click",()=>{
         </td>
         <td><button class="saveRowBtn">Save</button></th>`;
     tbody.appendChild(newModuleRow);
-    const saveRowBtn = document.querySelector(".saveRowBtn");//create a variable to refer to the save row buttons created above//
+    const saveRowBtn = newModuleRow.querySelector(".saveRowBtn");//create a variable to refer to the save row buttons created above//
     saveRowBtn.addEventListener("click", ()=>saveRow(newModuleRow)); //add EL to run saveRow fn on that row when that saverow button is clicked//
 });
        
@@ -124,6 +124,7 @@ function saveRow(row){
     //the new moduleData into them://
     stored.push(moduleData);
     localStorage.setItem("modules", JSON.stringify(stored));
+    row.dataset.id = moduleData.id;
     console.log("Saved: ", moduleData);
 }
 
@@ -140,13 +141,24 @@ const stored = JSON.parse(localStorage.getItem("modules")) ||[];
             <td>${module.course}</td>
             <td>${module.progress}</td>
             <td>${module.dateUpdated}</td>
-            <td>${module.notesChecked ? "✓" : ""}</td>
+            <td>${module.dailyNoteChecked ? "✓" : ""}</td>
             <td><button class="editRowBtn">Edit</button></td>
             <td><button class="deleteRowBtn">Delete</button></td>
         `;
+        row.dataset.id = module.id;
+
         tbody.appendChild(row);
+        const deleteRowBtn = row.querySelector(".deleteRowBtn");
+        deleteRowBtn.addEventListener("click", ()=>deleteRow(row));
     });
 
+    function deleteRow(row){
+        const id = row.dataset.id;
+        const stored = JSON.parse(localStorage.getItem("modules"));//retrieve existing module data//
+        const updated = stored.filter(item => item.id === id);//makes a new array WITHOUT the row matching this id//
+        localStorage.setItem("modules", JSON.stringify(updated));//save updated to local storage. 
+        row.remove();//UI removal
+    }
 
 
 // //Pikaday Calendar logic:
