@@ -125,6 +125,29 @@ function saveRow(row){
     localStorage.setItem("modules", JSON.stringify(stored));
     console.log("Saved: ", moduleData);
 }
+
+//FUNCTION TO RETRIEVE SAVED DATA FROM LOCAL STORAGE UPON PAGE LOAD//
+const tbody = document.getElementById("progressTableBody");
+const stored = JSON.parse(localStorage.getItem("modules")) ||[];
+
+    stored.forEach(module => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${module.moduleName}</td>
+            <td>${module.section}</td>
+            <td>${module.course}</td>
+            <td>${module.progress}</td>
+            <td>${module.dateUpdated}</td>
+            <td>${module.notesChecked ? "✓" : ""}</td>
+            <td><button class="editRowBtn">Edit</button></td>
+            <td><button class="deleteRowBtn">Delete</button></td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    
+
 // //Pikaday Calendar logic:
 // const picker = new Pikaday({
 //   field: document.getElementById('calendarInput'),
