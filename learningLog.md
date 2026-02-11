@@ -31,3 +31,25 @@ NOTES:
   right: 0;
   bottom: 0;
 This can be replaced by inset:0 - with position: fixed; it tells the element to stretch to all four sides of the viewport (very useful for overlays).
+
+## CREATING MODAL BUTTON (SIGNUP AND LOGIN) LOGIC
+
+# STEP 1: CREATE THE modalController OBJECT:
+- This object will be used to manage all modal button behaviour and state.
+- it will store variable references to the overlay and reference each modal (signUp & login), as well as references to the close and submit buttons.
+- it will handle methods for opening and closing. 
+
+Object.values(modals) returns an array of the values inside the object, ignoring the keys.
+magine your modals object is a drawer with labelled compartments:
+modals = {
+    login:  [login modal element],
+    signup: [signup modal element]
+}
+
+
+Object.values(modals) is like pulling out all the compartments at once and putting them in a row:
+[login modal element, signup modal element]
+
+
+Now you can do something to each one in a simple loop.
+

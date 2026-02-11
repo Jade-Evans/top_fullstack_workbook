@@ -40,6 +40,36 @@ main{
     flex: 1; /*enables main to take up the rest of the available space of body container*/
     overflow: hidden;/*main stays fixed and houses the aside/section that scroll*/
 }
+/* INDEX/LANDING PAGE CSS */
+#landingPageContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background-color: rgb(197, 211, 205);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
+    color:rgb(61, 75, 70);
+    padding: 3rem 4rem;
+    margin: 1rem 0 1.5rem;
+    border-radius: 1rem;
+}
+
+#landingPageHeader{
+    font-size: 6rem;
+    font-weight:100;
+    margin:0;
+    padding: 0;
+    color: white;
+    
+}
+
+.modalButtonsDiv{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+
 #landingPageMain{
     flex-direction: column;
     align-content: center;
@@ -62,18 +92,22 @@ main{
   background-color: rgba(96, 101, 98, 0.7); /* Black background with opacity */
   z-index: 2; 
 }
-#signUpModal{
-    display:none;
-    /* max-width: 50%;
-    max-height: 50%; */
-    object-fit: contain;
-    padding: 1rem;
-    z-index: 9999;
-    border-radius: 1rem;
+.modal{
+    display: none;
+    padding: 2rem;
     background-color: rgb(61, 75, 70);
     border: 0.1rem solid white;
+    border-radius: 1rem;
     font-size: 0.5rem;
+    align-self: center;
+
+    /* The important part */
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+    box-sizing: border-box;
 }
+
 .modalContent{
     min-width:0;
     min-height: 0;
@@ -82,25 +116,24 @@ main{
     align-items: center;
     text-align: center;
     font-size: 2em;
-    gap: 1rem;
+    gap: 0.5rem;
     color: white;
     
 }
-.close, .submit{
+.closeButton, .submit{
     color: rgb(61, 75, 70);
     font-weight: 400;
-    padding: 0 0.25rem;
     background-color: rgb(197, 211, 205);
     border: 1px white solid;
     border-radius: 0.5rem;
     font-size: 1rem; 
     padding: 0.5rem 0.75rem;
 }
-.close:hover, .submit:hover{
+.closeButton:hover, .submit:hover{
     box-shadow: 0.5rem 0.5rem 0.8rem rgb(23, 29, 27);
 }
 
-.close{
+.closeButton{
     align-self: flex-end;
     
 }
@@ -112,7 +145,7 @@ main{
     font-size: 2rem;
     font-weight: 200;
 }
-#signUpDetails{
+#signUpDetails, #loginDetails{
    text-align: left;
    margin: 0.75rem;
 }
@@ -164,9 +197,9 @@ button{
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
     border-radius: 0.5rem;
 }
-.close:hover, .submit:hover, button:hover{
+.closeButton:hover, .submit:hover, button:hover{
     background-color: rgb(35, 43, 40);
-    transition: 0.3s ease;
+    transition: 0.1s ease;
     color: white;
 }
 
@@ -217,35 +250,6 @@ hgroup{
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     margin: 1rem;
-}
-
-/* INDEX/LANDING PAGE CSS */
-#landingPageContent{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    background-color: rgb(197, 211, 205);
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
-    color:rgb(61, 75, 70);
-    padding: 3rem 4rem;
-    margin: 1rem 0 1.5rem;
-    border-radius: 1rem;
-}
-
-#landingPageHeader{
-    font-size: 6rem;
-    font-weight:100;
-    margin:0;
-    padding: 0;
-    color: white;
-    
-}
-
-.landingPageButtonDiv{
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 3rem;
 }
 
 

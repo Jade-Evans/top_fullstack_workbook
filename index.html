@@ -29,17 +29,16 @@
       <h1 id="landingPageHeader">SKILLROOTS</h1>
       <h2 id="landingPageTagline">Learn independently 🌱 Grow intentionally</h2>
       <div class="modalButtonsDiv">
-        <button id="signupButton">Sign Up</button>
-        <button id="loginButton">Log In</button>
+        <button id="signUpButton" class="welcomeButton">Sign Up</button>
+        <button id="loginButton" class="welcomeButton">Log In</button>
       </div>
     </div>
     <div id="overlayWrapper">
       <div id="signUpModal" class="modal">
         <div class="modalContent">
-          <span class="close">X</span>
-          <h2>Thank you for joining <br>🌱SKILLROOTS!</h2>
-          <p>Ready to start learning?
-          <br>Just enter your details below and click the Submit button:</p>
+          <span class="closeButton">X</span>
+          <h2>Ready to optimise your learning with <br>🌱SKILLROOTS!</h2>
+          <br>Simply enter your details below and click the Submit button to begin personalising your account:</p>
           <div id="signUpDetails">
             <label for="username">Username:</label>
             <input type="text" id="usernameInput" placeholder="Create Username" required><br>
@@ -49,6 +48,22 @@
             <input type="text" id="firstnameInput" placeholder="Enter first name" required><br>
             <label for="sName">Surname:</label>
             <input type="text" id="surnameInput" placeholder="Enter Surname" required><br> 
+          </div>
+          <input type="submit" class="submit">
+        </div>
+      </div>
+
+        <div id="loginModal" class="modal">
+        <div class="modalContent">
+          <span class="closeButton">X</span>
+          <h2>Welcome back to <br>🌱SKILLROOTS!</h2>
+          <p>Ready to dive back in?
+          <br>Just enter your details below and press <strong>Submit</strong> to continue learning:</p>
+          <div id="loginDetails">
+            <label for="username">Username:</label>
+            <input type="text" id="usernameInput" placeholder="Enter Username" required><br>
+            <label for="password">Password:</label>
+            <input type="text" id="passwordInput" placeholder="EnterPassword" required><br>
           </div>
           <input type="submit" class="submit">
         </div>
