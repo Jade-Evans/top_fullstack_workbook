@@ -40,6 +40,10 @@ const modalController ={
         this.modals[modalName].style.display="flex";
         this.modals[modalName].style.justifyContent="center";
         this.modals[modalName].style.alignContent="center";
+    },
+    close(){
+        this.overlay.style.display="none";
+        this.modals[modalName].style.display="none";
     }
 
 }
@@ -50,6 +54,11 @@ loginBtn.addEventListener("click",()=>{
 signUpBtn.addEventListener("click",()=>{
     modalController.open("signUpModal"); 
     
+})
+closeBtns.forEach(button=>{
+    button.addEventListener("click",()=>{
+        modalController.close();
+    })
 })
 
 
