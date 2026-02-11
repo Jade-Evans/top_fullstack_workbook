@@ -108,6 +108,7 @@ function saveRow(row){
     const dailyNoteChecked = row.querySelector("td:nth-child(6) input").checked;
     //create an object to store all the moduleData//
     const moduleData = {
+        id: crypto.randomUUID(), //generates unique ID for each object helpful when editing/deleting specific rows//
         moduleName,
         section,
         course,
@@ -146,7 +147,7 @@ const stored = JSON.parse(localStorage.getItem("modules")) ||[];
         tbody.appendChild(row);
     });
 
-    
+
 
 // //Pikaday Calendar logic:
 // const picker = new Pikaday({

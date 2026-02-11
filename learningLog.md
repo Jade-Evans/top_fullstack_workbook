@@ -72,6 +72,13 @@ Now you can do something to each one in a simple loop.
 - You save the whole array back under "modules"
 - From then on, "modules" exists and loads normally
 
+## GENERATING RANDOM ID using id: crypto.randomUUID():
+That one unique ID is what lets you:
+- delete the correct row
+- edit the correct row
+- update the correct row
+- avoid duplicates
+- re-render reliably
 
 
 
