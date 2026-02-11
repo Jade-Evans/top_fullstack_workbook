@@ -49,56 +49,58 @@ const modalController ={
 
 }}
 //login modal box appears on click
+if(loginBtn){
 loginBtn.addEventListener("click",()=>{
     modalController.open("loginModal");      
-})
+})}
+if(signUpBtn){
 signUpBtn.addEventListener("click",()=>{
-    modalController.open("signUpModal"); 
-    
-})
+    modalController.open("signUpModal");    
+})}
+if(closeBtns){
 closeBtns.forEach(button=>{
     button.addEventListener("click",()=>{
         modalController.close();
     })
-})
+})}
 
 
-// newModuleBtn.addEventListener("click",()=>{
-//     const tbody = document.getElementById("progressTableBody");
-//     const newModuleRow = document.createElement("tr");
-//     newModuleRow.innerHTML=`
+newModuleBtn.addEventListener("click",()=>{
+    const tbody = document.getElementById("progressTableBody");
+    const newModuleRow = document.createElement("tr");
+    newModuleRow.innerHTML=`
   
-//         <td><input type="text" placeholder="Module name"></td>
-//         <td><input type="text" placeholder="Section"></td>
-//         <td><input type="text" placeholder="Course"></td>
+        <td><input type="text" placeholder="Module name"></td>
+        <td><input type="text" placeholder="Section"></td>
+        <td><input type="text" placeholder="Course"></td>
 
-//         <td>
-//             <select name="progress">
-//             <option value="notStarted">Not Started</option>
-//             <option value="inProgress">In Progress</option>
-//             <option value="needsReview">Lesson Needs Review</option>
-//             <option value="confident">Lesson Complete: Confident</option>
-//             </select>
-//         </td>
+        <td>
+            <select name="progress">
+            <option value="notStarted">Not Started</option>
+            <option value="inProgress">In Progress</option>
+            <option value="needsReview">Lesson Needs Review</option>
+            <option value="confident">Lesson Complete: Confident</option>
+            </select>
+        </td>
 
-//         <td><input type="date" name="dateUpdate"></td>
+        <td><input type="date" name="dateUpdate"></td>
 
-//         <td>
-//             <label for="noteCheckbox"></label><br>
-//             <input type="checkbox" class="dailyNoteChecked" id="tool3" name="check" value="dailyNotes">
+        <td>
+            <label for="noteCheckbox"></label><br>
+            <input type="checkbox" class="dailyNoteChecked" id="tool3" name="check" value="dailyNotes">
             
-//         </td>
-//         <td><button>Save</button></th>`;
-//     tbody.appendChild(newModuleRow);
+        </td>
+        <td><button>Save</button></th>`;
+    tbody.appendChild(newModuleRow);
     
-//         const saveEditToggle = document.createElement("button");
-//         saveEditToggle.textContent="Save";
-//     if(!saveEditToggle){
-//         progressTableButtons.appendChild(saveEditToggle);
-//     }
+        const saveEditToggle = document.createElement("button");
+        saveEditToggle.textContent="Save";
+    if(!saveEditToggle){
+        progressTableButtons.appendChild(saveEditToggle);
+    }
 
 
-// });
+});
             
 // //Pikaday Calendar logic:
 // const picker = new Pikaday({
