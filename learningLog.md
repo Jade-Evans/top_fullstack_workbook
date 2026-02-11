@@ -66,6 +66,12 @@ Now you can do something to each one in a simple loop.
 - Read the array from localStorage
 - Build table rows from it
 
+- "modules" doesn’t exist at first — that’s correct
+- The line gives you an empty array to start with
+- You push the new module into it
+- You save the whole array back under "modules"
+- From then on, "modules" exists and loads normally
+
 
 
 

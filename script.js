@@ -95,7 +95,36 @@ newModuleBtn.addEventListener("click",()=>{
     const saveRowBtn = document.querySelector(".saveRowBtn");//create a variable to refer to the save row buttons created above//
     saveRowBtn.addEventListener("click", ()=>saveRow(newModuleRow)); //add EL to run saveRow fn on that row when that saverow button is clicked//
 });
-            
+       
+//Logic for saving progress table (dashboard) data rows to local Storage using Save button):
+//create the function to be repeatedly used for Save row button//
+function saveRow(row){
+    //assign a variable to the data in each td for the row//
+    const  moduleName = row.querySelector("td:nth-child(1) input").value;
+    const section = row.querySelector("td:nth-child(2) input").value;
+    const course = row.querySelector("td:nth-child(3) input").value;  
+    const progress = row.querySelector("td:nth-child(4) select").value;          
+    const dateUpdated = row.querySelector("td:nth-child(5) input").value;
+    const dailyNoteChecked = row.querySelector("td:nth-child(6) input").checked;
+    //create an object to store all the moduleData//
+    const moduleData = {
+        moduleName,
+        section,
+        course,
+        progress,
+        dateUpdated,
+        dailyNoteChecked
+    }
+    //for the below, when the function saveRow runs, the browser looks in local storage and retrieves any
+    //"modules" data. NB there wont be any the first save, so it will return null or [] as per below. We
+    //add "modules" when saving. localStorage will always return strings, so JSON.parse is used to convert those to 
+    //readable arrays so we have an array of module objects eventually. 
+    const stored = JSON.parse(localStorage.getItem("modules")) || [];//The [] are empty array brackets returned so we can push
+    //the new moduleData into them://
+    stored.push(moduleData);
+    localStorage.setItem("modules", JSON.stringify(stored));
+    console.log("Saved: ", moduleData);
+}
 // //Pikaday Calendar logic:
 // const picker = new Pikaday({
 //   field: document.getElementById('calendarInput'),
