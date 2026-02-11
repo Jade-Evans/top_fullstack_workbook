@@ -43,10 +43,11 @@ const modalController ={
     },
     close(){
         this.overlay.style.display="none";
-        this.modals[modalName].style.display="none";
-    }
+        Object.values(this.modals).forEach(modal=>{
+            modal.style.display="none";
+    })
 
-}
+}}
 //login modal box appears on click
 loginBtn.addEventListener("click",()=>{
     modalController.open("loginModal");      
