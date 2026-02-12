@@ -127,6 +127,20 @@ function saveRow(row){
     localStorage.setItem("modules", JSON.stringify(stored));
     row.dataset.id = moduleData.id;
     console.log("Saved: ", moduleData);
+    row.innerHTML = `
+    <td>${moduleName}</td>
+    <td>${section}</td>
+    <td>${course}</td>
+    <td>${progress}</td>
+    <td>${dateUpdated}</td>
+    <td>${dailyNoteChecked ? "✓" : ""}</td>
+    <td><button class="editRowBtn">Edit</button></td>
+    <td><button class="saveChangesBtn">Save Changes</button></td>
+    <td><button class="deleteRowBtn">Delete</button></td>`
+
+    row.querySelector(".editRowBtn").addEventListener("click", () => editRow(row));
+    row.querySelector(".saveChangesBtn").addEventListener("click", ()=>saveChanges(row));
+    row.querySelector(".deleteRowBtn").addEventListener("click", () => deleteRow(row));
 }
 
 //FUNCTION TO RETRIEVE SAVED DATA FROM LOCAL STORAGE UPON PAGE LOAD//
@@ -144,6 +158,7 @@ const stored = JSON.parse(localStorage.getItem("modules")) ||[];
             <td>${module.dateUpdated}</td>
             <td>${module.dailyNoteChecked ? "✓" : ""}</td>
             <td><button class="editRowBtn">Edit</button></td>
+            <td><button class="saveChangesBtn">Save Changes</button></td>
             <td><button class="deleteRowBtn">Delete</button></td>
         `;
         row.dataset.id = module.id;
@@ -152,6 +167,10 @@ const stored = JSON.parse(localStorage.getItem("modules")) ||[];
         const deleteRowBtn = row.querySelector(".deleteRowBtn");
         deleteRowBtn.addEventListener("click", ()=>deleteRow(row));
     });
+
+    function editRow(row){
+        
+    }
 
     function deleteRow(row){
         const id = row.dataset.id;
