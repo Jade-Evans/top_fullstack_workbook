@@ -268,6 +268,16 @@ button{
 
 
 }
+.widgetInfo{
+    border-radius: 100%;
+    background-color: white;
+    color: rgb(41, 46, 45);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78); 
+    padding: 0.25rem 0.75rem;
+    align-self: flex-end;
+}
+
+
 #progressTable, #progressTableWidget, #progressTableBody{
     min-width: 0;
     border-radius: 1rem;
