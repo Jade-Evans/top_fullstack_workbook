@@ -1,6 +1,6 @@
 *{
     font-family: montserrat;
-    font-weight: 100;
+    font-weight: 200;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,7 +41,12 @@ main{
     overflow: hidden;/*main stays fixed and houses the aside/section that scroll*/
 }
 /* INDEX/LANDING PAGE CSS */
+#landingPageMain{
+    flex-direction: column;
+    align-items: center;
+}
 #landingPageContent{
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,38 +54,33 @@ main{
     background-color: rgb(197, 211, 205);
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
     color:rgb(61, 75, 70);
-    padding: 3rem 4rem;
-    margin: 1rem 0 1.5rem;
+    padding: 2rem 3.5rem;
     border-radius: 1rem;
 }
 
 #landingPageHeader{
     font-size: 6rem;
-    font-weight:100;
+    font-weight:200;
     margin:0;
     padding: 0;
     color: white;
     
 }
 
-.modalButtonsDiv{
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
-
-
-#landingPageMain{
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-}
 
 #landingPagecurrentDateTime{
     align-self: flex-end;
 }
 #landingPageTagline{
     margin: 0;
+}
+.landingSubtext{
+    margin: 2rem;
+}
+.modalButtonsDiv{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 /*sign in/log in modals*/
 #overlayWrapper{
@@ -89,25 +89,33 @@ main{
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   inset: 0;
-  background-color: rgba(96, 101, 98, 0.7); /* Black background with opacity */
-  z-index: 2; 
+  background-color: rgba(237, 248, 241, 0.5); /* Black background with opacity */
+  z-index: 11; 
 }
 .modal{
     display: none;
-    padding: 2rem;
+    padding: 0.5rem;
     background-color: rgb(61, 75, 70);
     border: 0.1rem solid white;
     border-radius: 1rem;
     font-size: 0.5rem;
     align-self: center;
-
+    z-index: 12;
+    box-shadow: 0.5rem 0.5rem 0.8rem rgb(133, 146, 146);
     /* The important part */
     max-width: 90vw;
     max-height: 90vh;
     overflow: auto;
     box-sizing: border-box;
 }
-
+.topContent{
+    display: flex;
+    justify-content: space-between;
+}
+.topContent h3{
+    color: white;
+    font-size: 1rem;
+}
 .modalContent{
     min-width:0;
     min-height: 0;
@@ -115,9 +123,11 @@ main{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    align-self: center;
     font-size: 2em;
     gap: 0.5rem;
     color: white;
+    margin: 2rem;
     
 }
 .closeButton, .submit{
@@ -134,7 +144,7 @@ main{
 }
 
 .closeButton{
-    align-self: flex-end;
+    justify-self: flex-end;
     
 }
 .submit{
@@ -145,10 +155,30 @@ main{
     font-size: 2rem;
     font-weight: 200;
 }
+#aignUpHeader{
+    color: white;
+}
 #signUpDetails, #loginDetails{
    text-align: left;
    margin: 0.75rem;
 }
+#avatars{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+#avatars>*{
+    font-size: 3rem;
+    opacity: 0.5;
+}
+#avatars>*:hover{
+    font-size: 3.25rem;
+    opacity: 1;
+    transition: 0.2s ease;
+    text-shadow: 0.5rem 0.5rem 0.95rem rgb(34, 43, 43);
+;
+}
+
 aside{
     flex:1;
     background-color: rgb(77, 111, 99);
@@ -166,7 +196,7 @@ section{
     margin: 1rem;
 }
 .logo{
-    font-size: 3rem;
+    font-size: 1.5rem;
     flex: 1 1 0;
 }
 .nav-bar{
@@ -245,6 +275,25 @@ button{
 }
 #progressTableWidget{
     max-width: 90%;
+
+}
+#progressTableBody input[type="text"],
+#progressTableBody input[type="date"],
+#progressTableBody select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 4px 2px;
+    font: inherit;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+#progressTableBody input:focus,
+#progressTableBody select:focus{
+     outline: none;
+    border-bottom: 1px solid #999;
 
 }
 #progressTableButtons{
