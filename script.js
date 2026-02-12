@@ -38,6 +38,7 @@ const modalController ={
         this.overlay.style.justifyContent="center";
         //BEHAVIOUR: display the modal as defined in modals linking open("x") with this.modals[x].style....//
         this.modals[modalName].style.display="flex";
+        this.modals[modalName].style.flexDirection="column";
         this.modals[modalName].style.justifyContent="center";
         this.modals[modalName].style.alignContent="center";
     },
