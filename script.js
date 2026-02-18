@@ -16,6 +16,8 @@ const loginBtn = document.getElementById("loginButton");
 const signUpBtn = document.getElementById("signUpButton");
 const landingPageMain = document.getElementById("landingPageMain");
 const closeBtns = Array.from(document.querySelectorAll(".closeButton"));
+const createAccountSubmitBtn = document.getElementById("createAccountSubmitBtn");
+const loginSubmitBtn = document.getElementById("loginSubmitBtn");
 
 
 //DASHBOARD:
@@ -28,8 +30,9 @@ const newModuleBtn = document.getElementById("createNewModule");
 const modalController ={
     overlay: document.getElementById("overlayWrapper"),
     modals: {
-        signUpModal: document.getElementById("signUpModal"),
+        signUpModal:document.getElementById("signUpModal"),
         loginModal:document.getElementById("loginModal"),
+        actionCompleteModal:document.getElementById("actionCompleteModal"),
     },
     //a function within the modalController Object for managing opening behaviour://
     open(modalName){//modal name will refer to one of the names in modals key above i.e. signUpModal, loginModal, and called with related button click EL//
@@ -58,6 +61,12 @@ if(signUpBtn){
 signUpBtn.addEventListener("click",()=>{
     modalController.open("signUpModal");    
 })}
+if(createAccountSubmitBtn){
+    createAccountSubmitBtn.addEventListener("click",()=>{
+        modalController.close("signUpModal");
+        modalController.open("actionCompleteModal");
+    })
+}
 if(closeBtns){
 closeBtns.forEach(button=>{
     button.addEventListener("click",()=>{
@@ -66,7 +75,8 @@ closeBtns.forEach(button=>{
 })}
 
 
-newModuleBtn.addEventListener("click",()=>{
+if(newModuleBtn){
+    newModuleBtn.addEventListener("click",()=>{
     const tbody = document.getElementById("progressTableBody");
     const newModuleRow = document.createElement("tr");
     newModuleRow.innerHTML=`
@@ -95,7 +105,8 @@ newModuleBtn.addEventListener("click",()=>{
     tbody.appendChild(newModuleRow);
     const saveRowBtn = newModuleRow.querySelector(".saveRowBtn");//create a variable to refer to the save row buttons created above//
     saveRowBtn.addEventListener("click", ()=>saveRow(newModuleRow)); //add EL to run saveRow fn on that row when that saverow button is clicked//
-});
+})
+};
        
 //Logic for saving progress table (dashboard) data rows to local Storage using Save button):
 //create the function to be repeatedly used for Save row button//
@@ -162,8 +173,9 @@ const stored = JSON.parse(localStorage.getItem("modules")) ||[];
             <td><button class="deleteRowBtn">Delete</button></td>
         `;
         row.dataset.id = module.id;
-
-        tbody.appendChild(row);
+        if(tbody){
+            tbody.appendChild(row)
+        };
         const deleteRowBtn = row.querySelector(".deleteRowBtn");
         deleteRowBtn.addEventListener("click", ()=>deleteRow(row));
     });

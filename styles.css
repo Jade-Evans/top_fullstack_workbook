@@ -268,21 +268,49 @@ button{
 
 
 }
-.widgetInfo{
+
+.widgetInfoBtn{
+    align-self: flex-end;
+    position: relative;
     border-radius: 100%;
     background-color: white;
     color: rgb(41, 46, 45);
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78); 
     padding: 0.25rem 0.75rem;
-    align-self: flex-end;
 }
-
-
+.widgetInfoBtn:hover{
+    background-color: rgb(119, 132, 132);
+}
+.widgetInfoBtn:hover .widgetInstructions{
+    display: block;
+    
+}
+.widgetInstructions{
+    border-radius: 1rem;
+    display: none;                   
+    transition: 0.3s ease;  /* fade */
+    position: absolute;/*enables floating above the widget instead of stretching widget container*/
+    bottom: 100%;
+    right: 0;
+    z-index:10;
+    background-color: #f5f5f7;
+    color:rgb(71, 78, 78);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78); 
+    padding: 0.25rem;
+    width: 50vw;
+}
 #progressTable, #progressTableWidget, #progressTableBody{
     min-width: 0;
     border-radius: 1rem;
     margin: 1.5rem;
 }
+#progressTable{
+    margin-top: 0;
+}
+#progressTable td{
+    border-radius: 2rem;
+
+} 
 #progressTableWidget{
     max-width: 90%;
 

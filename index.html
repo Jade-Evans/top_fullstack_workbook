@@ -39,6 +39,7 @@
       </div>
    
       <div id="overlayWrapper">
+
         <div id="signUpModal" class="modal">
           <div class="topContent">
               <h3>🌱SKILLROOTS</h3>
@@ -56,7 +57,6 @@
               <input type="password" id="pwdInput" placeholder="Create Password" required><br>
               <label for="pwd2">Re-Enter Password:</label>
               <input type="password" id="pwdInput2" placeholder="Re-enter Password" required><br>
-              
             </div>
             <div id="avatars">
               <div id="seedlingAvatar">🌱</div>
@@ -65,11 +65,10 @@
               <div id="wildflower">🌼</div>
               <div id="cactus">🌵</div>
             </div>
-            <input type="submit" id="createAccountSubmit" class="submit">
+            <button type="submit" id="createAccountSubmitBtn" class="submit">Submit</button>
           </div>
         </div>
-
-          <div id="loginModal" class="modal">
+        <div id="loginModal" class="modal">
           <div class="modalContent">
             <span class="closeButton">X</span>
             <h2>Welcome back to <br>🌱SKILLROOTS!</h2>
@@ -81,9 +80,20 @@
               <label for="password">Password:</label>
               <input type="text" id="passwordInput" placeholder="EnterPassword" required><br>
             </div>
-            <input type="submit" class="submit">
-          </div>
+            <button type="submit" id="loginSubmitBtn" class="submit">Submit</button>
+          </div> 
         </div>
+        <div id="actionCompleteModal" class="modal">
+          <div class="modalContent">
+            <span class="closeButton">X</span>
+            <h2 id="welcomeMessageHeader"></h2>
+            <div id="chosenAvatar"></div>
+            <p id="welcomeMessageP">Ready to dive back in?></p>
+            <button type="submit" id="proceedToDashboardBtn" class="submit">Proceed to Dashboard</button>
+          </div>
+        
+            
+          </div>
     </main>
   </div>
 
