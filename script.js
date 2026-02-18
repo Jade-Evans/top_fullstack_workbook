@@ -18,6 +18,7 @@ const landingPageMain = document.getElementById("landingPageMain");
 const closeBtns = Array.from(document.querySelectorAll(".closeButton"));
 const createAccountSubmitBtn = document.getElementById("createAccountSubmitBtn");
 const loginSubmitBtn = document.getElementById("loginSubmitBtn");
+const proceedToDashboardBtn = document.getElementById("proceedToDashboardBtn");
 
 
 //DASHBOARD:
@@ -72,6 +73,11 @@ closeBtns.forEach(button=>{
     button.addEventListener("click",()=>{
         modalController.close();
     })
+if(proceedToDashboardBtn){
+    proceedToDashboardBtn.addEventListener("click",()=>{
+        modalController.close();
+    })
+}
 })}
 
 
