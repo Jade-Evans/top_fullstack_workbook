@@ -37,6 +37,7 @@ footer{
 }
 main{
     display: flex;
+    flex-direction: column;
     flex: 1; /*enables main to take up the rest of the available space of body container*/
     overflow: hidden;/*main stays fixed and houses the aside/section that scroll*/
 }
@@ -180,18 +181,13 @@ main{
 }
 
 aside{
-    flex:1;
     background-color: rgb(77, 111, 99);
-    color: white;
-    font-size: 1.25rem;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-evenly;
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
     
 }
 section{
-    flex:4;
     overflow-y: auto;
     background-color: #f5f5f7;
 }
@@ -206,8 +202,11 @@ section{
     padding: 0.5rem;
     flex-shrink: 1;
 }
+a{
+     text-decoration: none;
+
+}
 .nav-bar a{
-    text-decoration: none;
     color: white;   
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
@@ -240,8 +239,27 @@ button{
     flex-direction: column;
     align-items: center;
 }
+#dashboardSideBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
 #dashboardToolKit{
-    padding: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+   
+
+}
+.toggleSideBarBtn{
+    border-style: none;
+    background-color: rgba(0,0,0,0);
+    padding: 0.25rem 0.5rem;
+    margin: 0.5rem;
+    box-shadow: none;
+    justify-self: flex-end;
+
 }
 
 .dashboardTool{
