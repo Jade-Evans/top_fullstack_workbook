@@ -49,14 +49,24 @@
             <h2 id="signUpHeader">Create your account</h2>
             <br>Simply enter your details and select an Avatar to begin:</p>
             <div id="signUpDetails">
-              <label for="username">Username:</label>
-              <input type="text" id="usernameInput" placeholder="Create Username" required><br>
-              <label for="email">Email:</label>
-              <input type="text" id="emailInput" placeholder="Enter email" required><br> 
-              <label for="pwd">Password:</label>
-              <input type="password" id="pwdInput" placeholder="Create Password" required><br>
-              <label for="pwd2">Re-Enter Password:</label>
-              <input type="password" id="pwdInput2" placeholder="Re-enter Password" required><br>
+              <label>Username:</label>
+              <input type="text" id="username" name="username" placeholder="Please enter username"/>
+              <label>Email:</label>
+              <input type="text" id="email" name="email"  placeholder="Please enter email"/>
+              <label>Create Password:</label>
+              <div class="passwordWrap">
+                <input type="password" id="password" name="password" placeholder="Enter Password here"/>
+                <button type="button" id="showPasswordBtn">
+                  <img src="visiblePwd.png" alt="icon password visible">
+                </button>
+              </div>
+              <label>Re-enter Password:</label>
+              <div class="reenterPasswordWrap">
+                <input type="password" id="reenterPassword" name="reenterPassword" name="reenterPassword"/>
+                <button type="button" id="showReenterPasswordBtn">
+                  <img src="visiblePwd.png" alt="icon password visible">
+                </button>
+              </div>
             </div>
             <div id="avatars">
               <div id="seedlingAvatar">🌱</div>
@@ -75,10 +85,10 @@
             <p>Ready to dive back in?
             <br>Just enter your details below and press <strong>Submit</strong> to continue learning:</p>
             <div id="loginDetails">
-              <label for="username">Username:</label>
-              <input type="text" id="usernameInput" placeholder="Enter Username" required><br>
-              <label for="password">Password:</label>
-              <input type="text" id="passwordInput" placeholder="EnterPassword" required><br>
+              <label for="usernameLogin">Username:</label>
+              <input type="text" id="usernameInputLogin" placeholder="Enter Username" required><br>
+              <label for="passwordLogin">Password:</label>
+              <input type="text" id="passwordInputLogin" placeholder="EnterPassword" required><br>
             </div>
             <button type="submit" id="loginSubmitBtn" class="submit">Submit</button>
           </div> 

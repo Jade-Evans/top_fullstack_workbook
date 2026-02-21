@@ -131,6 +131,28 @@ main{
     margin: 2rem;
     
 }
+
+/*password eye icons*/
+.passwordWrap{
+    position: relative;
+}
+.reenterPasswordWrap{
+    position: relative;
+}
+
+#showPasswordBtn, #showReenterPasswordBtn{
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    right: 1.25rem;
+    transform: translateY(-45%);
+    width: 1.25rem;
+     border-style: none;
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+   
+}
+
 .closeButton, .submit{
     color: rgb(61, 75, 70);
     font-weight: 400;
@@ -160,9 +182,22 @@ main{
     color: white;
 }
 #signUpDetails, #loginDetails{
-   text-align: left;
+   text-align: center;
    margin: 0.75rem;
+   display: flex;
+   flex-direction: column;
+   max-width: 70vw;
 }
+#signUpDetails label{
+    display:flex;
+}
+input[type="text"]{
+    padding: 0.2rem 1rem;
+}
+input[type="password"]{
+    padding: 0.2rem 2rem 0.2rem 1rem;
+}
+
 #avatars{
     display:flex;
     justify-content: space-evenly;
@@ -234,6 +269,9 @@ button{
 
 /*DASHBOARD*/
 
+#dashboardPageHeader{
+    margin: 0;
+}
 #dashboardWorkspace{
     display: flex;
     flex-direction: column;
@@ -252,12 +290,16 @@ button{
    
 
 }
-.toggleSideBarBtn{
+.btnRemoveStyle{
     border-style: none;
     background-color: rgba(0,0,0,0);
     padding: 0.25rem 0.5rem;
     margin: 0.5rem;
     box-shadow: none;
+
+}
+.toggleSideBarBtn{
+   
     justify-self: flex-end;
 
 }
