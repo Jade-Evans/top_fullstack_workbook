@@ -141,7 +141,7 @@ function saveRow(row){
     row.dataset.id = moduleData.id;
     console.log("Saved: ", moduleData);
     row.innerHTML = `
-    <td>${moduleName}</td>
+    <td><a href="modules_template.html?moduleId=${moduleData.id}">${moduleName}</td>
     <td>${section}</td>
     <td>${course}</td>
     <td>${progress}</td>
