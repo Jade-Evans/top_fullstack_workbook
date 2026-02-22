@@ -80,17 +80,16 @@ if(proceedToDashboardBtn){
 }
 })}
 
-
+//CODE FOR DASHBOARD PAGE//
+//PROGRESS TRACKER WIDGET//
 if(newModuleBtn){
     newModuleBtn.addEventListener("click",()=>{
     const tbody = document.getElementById("progressTableBody");
     const newModuleRow = document.createElement("tr");
     newModuleRow.innerHTML=`
-  
         <td><input type="text" placeholder="Module name"></td>
         <td><input type="text" placeholder="Section"></td>
         <td><input type="text" placeholder="Course"></td>
-
         <td>
             <select name="progress">
             <option value="notStarted">Not Started</option>
@@ -99,13 +98,10 @@ if(newModuleBtn){
             <option value="confident">Lesson Complete: Confident</option>
             </select>
         </td>
-
         <td><input type="date" name="dateUpdate"></td>
-
         <td>
             <label for="noteCheckbox"></label><br>
-            <input type="checkbox" class="dailyNoteChecked" id="tool3" name="check" value="dailyNotes">
-            
+            <input type="checkbox" class="dailyNoteChecked" id="tool3" name="check" value="dailyNotes">  
         </td>
         <td><button class="saveRowBtn">Save</button></th>`;
     tbody.appendChild(newModuleRow);
@@ -193,7 +189,7 @@ const stored = JSON.parse(localStorage.getItem("modules")) ||[];
     function deleteRow(row){
         const id = row.dataset.id;
         const stored = JSON.parse(localStorage.getItem("modules"));//retrieve existing module data//
-        const updated = stored.filter(item => item.id === id);//makes a new array WITHOUT the row matching this id//
+        const updated = stored.filter(item => item.id !== id);//makes a new array WITH the row matching this id filtered out//
         localStorage.setItem("modules", JSON.stringify(updated));//save updated to local storage. 
         row.remove();//UI removal
     }
