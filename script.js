@@ -141,7 +141,7 @@ function saveRow(row){
     row.dataset.id = moduleData.id;
     console.log("Saved: ", moduleData);
     row.innerHTML = `
-    <td><a href="modules_template.html?moduleId=${moduleData.id}">${moduleName}</td>
+    <td><a href="modules_template.html?moduleId=${moduleData.id}">${moduleName}<</td>
     <td>${section}</td>
     <td>${course}</td>
     <td>${progress}</td>
@@ -183,8 +183,12 @@ const stored = JSON.parse(localStorage.getItem("modules")) ||[];
     });
 
     function editRow(row){
-        
+        const rowCells = row.querySelectorAll("td");//select all cells in a row//
+        rowCells[3].innerHTML=`<input value=${rowCells[3].textContent}>`;
+        rowCells[4].innerHTML=`<input value=${rowCells[4].textContent}>`;
+        rowCells[5].innerHTML=`<input value=${rowCells[5].textContent}>`;
     }
+    function saveChanges(row){}
 
     function deleteRow(row){
         const id = row.dataset.id;
