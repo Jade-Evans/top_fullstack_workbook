@@ -1,5 +1,4 @@
-*{
-    font-family: montserrat;
+*{  font-family: montserrat;
     font-weight: 200;
     margin: 0;
     padding: 0;
@@ -145,7 +144,7 @@ main{
     top: 50%;
     margin: 0;
     right: 1.25rem;
-    transform: translateY(-45%);
+    transform: translateY(-50%);
     width: 1.25rem;
      border-style: none;
     background-color: rgba(0,0,0,0);
@@ -188,8 +187,12 @@ main{
    flex-direction: column;
    max-width: 70vw;
 }
-#signUpDetails label{
+#signUpDetails{
     display:flex;
+}
+#signUpDetails input{
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
 }
 input[type="text"]{
     padding: 0.2rem 1rem;
@@ -422,140 +425,6 @@ nav-bar a, #dashboardToolKit label:hover, button:hover{
 .subheading{
     margin: 1rem;
 } 
-
-/*Module Template*/
-/* #template_container{
-   width: 100%;
-}
-#workbookMainContainer{
-    display: flex;
-
-}
-#workbookSideBar{
-    background-color: teal;
-}
-.toolkit{
-    color: white;  
-}
-#workbookMainContent{
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    flex: 1;
-}
-
-
- .module_container{
-    background-color: rgb(205, 210, 208);
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;  
-}
-.moduleHeaders{
-    margin: 0.5rem 0rem;
-    padding:0;
-    font-weight: 400;
-    color: white;
-}
-.moduleDetails{
-    color: white;
-    background-color: rgb(142, 158, 152);
-    border-radius: 1rem;
-    padding: 0.75rem 1rem;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    gap: 2rem;
-}
-.detail{
-    display: flex;
-    gap: 0.25rem;
-    align-items: last baseline;
-}
-.moduleDetails h3{
-    font-weight: 200;
-}
-.workspaceIntro{
-    padding: 1rem;
-    margin: 0.25rem 0.5rem;
-    font-weight: 200;
-} */
-/* .notebook-list { */
-  /* background: #f1eee3; soft yellowed paper */
-  /* padding: 1.5rem 2rem;
-  border-radius: 0.2rem;
-  box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
-  align-self: stretch;
-
-  /* faint horizontal lines */
-  /* background-image:  */
-    /* linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
-  background-size: 100% 1.75rem; */
-
-  /* notebook margin line */
-  /* border-left: 4px solid rgba(200, 80, 80, 0.4);
-  margin: 1.5rem 0.25rem;
-}
-
-.notebook-list li {
-  padding: 0.4rem 0;
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-}
-
-.stickyNotesContainer{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    
-}
-.stickyNotesContainer div{
-    flex:1;
-    max-width: 20%;
-    border-style:groove;
-    padding: 0.5rem;
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78);
-    
-}
-.accessibility{
-    background-color: rgb(194, 225, 194);
-}
-.sustainability{
-    background-color: rgb(198, 198, 244);
-}  */
-/* ol{
-    list-style-position: inside;
-    
-} 
-
-
-/*PRACTICAL EXERCISES*/
-/*02-SVG*/
-/* .container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20.5rem;
-    justify-content: center;
-}
-.container > div{
-    flex: 1;
-    border: solid 0.5rem lightblue;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;   
-}
-.container div svg{
-    
-    background-color: lightblue;
-} */
-
 /* 03-TABLES*/
 table{
   background-color: white;
