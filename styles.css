@@ -106,23 +106,22 @@ main {
     overflow: hidden;
 }
 
-aside {
+aside {/*universal toolbar "sidebar" styling*/
     display: flex;
-    justify-content: space-evenly;
     color: white;
     background-color: rgb(61, 75, 70,0.75);
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
-    display: flex;
     justify-content: center;
-    align-items: center;
+   
 }
 .asideToolKit {
     display: flex;
     gap: 0.5rem;
     align-items: baseline;
+
 }
 
-.asideTool {
+.asideToolKit li {
     list-style: none;
     margin: 0.25rem;
     padding: 0.5rem;
