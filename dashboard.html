@@ -26,11 +26,11 @@
   <main>
      <aside>
         <ul class="asideToolKit">
-            <li><label><input type="checkbox" name="progressTracker">Progress Tracker</label></li>
-            <li><label><input type="checkbox" name="Calendar">Calendar</label></li>
-            <li><label><input type="checkbox" name="reviewNotes">Review Notes</label></li>
-            <li><label><input type="checkbox" name="studyVibesChecklist">Vibes Checklist</label></li>
-            <li><label><input type="checkbox" name="dailyMotivation"></label>Daily Motivation</li>
+            <li><label><input type="checkbox" data-widget="progressTracker" name="progressTracker">Progress Tracker</label></li>
+            <li><label><input type="checkbox" data-widget="calendar"name="Calendar">Calendar</label></li>
+            <li><label><input type="checkbox" data-widget="reviewNotes"name="reviewNotes">Review Notes</label></li>
+            <li><label><input type="checkbox" data-widget="studyVibesChecklist"name="studyVibesChecklist">Vibes Checklist</label></li>
+            <li><label><input type="checkbox" data-widget="dailyMotivation"name="dailyMotivation"></label>Daily Motivation</li>
         </ul>
         <button class="toggleSideBarBtn">☰</button>
      </aside>
@@ -41,14 +41,14 @@
             <h1 class="pageHeader">LEARNING DASHBOARD</h1> 
         </hgroup>
         <div id="dashboardWorkspace">
-            <div id="progressTableWidget" class="dashboardWidget">  
+            <div data-widget="progressTracker" class="dashboardWidget">  
                     <div class="widgetInfoBtn">i
                         <p class="widgetInstructions">The table below allows you to develop a curriculum based on your specific requirements, 
                         and keep a record of your learning, without being restricted to one course. <br>
                         Click "Create New Module" to get started. </p>
                     </div>
                 
-                <table id="progressTable">
+                <table id="progressTrackerTable">
                     <caption>Learning Progress Tracker</caption>
                      
                     <thead>
@@ -65,10 +65,10 @@
                             <th scope="col" colspan="3">&nbsp;</th>
                         </tr>
                     </thead>
-                    <tbody id="progressTableBody"></tbody>
+                    <tbody id="progressTrackerTableBody"></tbody>
                     
                 </table>
-                <div id="progressTableButtons">
+                <div id="progressTrackerTableButtons">
                     <button id="createNewModule">Create New Module</button>
                 </div>
             </div>

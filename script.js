@@ -126,8 +126,8 @@ if (closeBtns) {
    DASHBOARD — DOM REFERENCES
    ========================================================= */
 const dashboardWorkspace = document.getElementById("dashboardWorkspace");
-const progressTable = document.getElementById("progressTable");
-const progressTableButtons = document.getElementById("progressTableButtons");
+const progressTrackerTable = document.getElementById("progressTrackerTable");
+const progressTrackerTableButtons = document.getElementById("progressTrackerButtons");
 const newModuleBtn = document.getElementById("createNewModule");
 
 
@@ -136,7 +136,7 @@ const newModuleBtn = document.getElementById("createNewModule");
    ========================================================= */
 if (newModuleBtn) {
     newModuleBtn.addEventListener("click", () => {
-        const tbody = document.getElementById("progressTableBody");
+        const tbody = document.getElementById("progressTrackerTableBody");
         const newModuleRow = document.createElement("tr");
 
         newModuleRow.innerHTML = `
@@ -215,7 +215,7 @@ function saveRow(row) {
 /* =========================================================
    DASHBOARD — LOAD SAVED MODULES ON PAGE LOAD
    ========================================================= */
-const tbody = document.getElementById("progressTableBody");
+const tbody = document.getElementById("progressTrackerTableBody");
 const stored = JSON.parse(localStorage.getItem("modules")) || [];
 
 stored.forEach(module => {
