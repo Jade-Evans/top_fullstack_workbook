@@ -109,9 +109,10 @@ main {
 aside {/*universal toolbar "sidebar" styling*/
     display: flex;
     color: white;
-    background-color: rgb(61, 75, 70,0.75);
+    background-color: rgb(61, 75, 70,0.8);
     box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
     justify-content: center;
+    padding: 1.25rem;
    
 }
 .asideToolKit {
@@ -120,14 +121,21 @@ aside {/*universal toolbar "sidebar" styling*/
     align-items: baseline;
 
 }
-
 .asideToolKit li {
     list-style: none;
+    font-size: 1.25rem;
     margin: 0.25rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
-
+.asideToolKit li label {
+    display: flex;
+    gap: 0.25rem;
+}
+.asideToolKit li:hover{
+    background-color: rgb(61, 75, 70);
+    transition: 0.3s ease;
+}
 section {
     overflow-y: auto;
     background-color: #f5f5f7;
