@@ -1,463 +1,369 @@
-*{  font-family: montserrat;
-    font-weight: 200;
+/* =========================================
+   GLOBAL RESET & BASE
+========================================= */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: montserrat, sans-serif;
+    font-weight: 200;
 }
+
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /*take full height of viewport on any device*/
-  overflow: hidden; /*prevents entire page from scrolling (which would scroll h & f - not desired*/  
-}
-header, footer {
-    z-index: 10;/*keeps h & f above rest of content*/
-    position: sticky;
-    display: flex;
-    align-items: center;
-    color: white;
-    background-color: rgb(61, 75, 70);
-    padding: 1rem;
-}
-
-header{
-    justify-content: space-between;
-    top: 0;    
-}
-footer{
-    justify-content: center;
-    bottom: 0;   
-}
-.currentDateTime{
-    justify-self: flex-end;
-    margin: 0.5rem;
-    font-weight: 200;
-    font-size: 1.25rem;
-}
-main{
     display: flex;
     flex-direction: column;
-    flex: 1; /*enables main to take up the rest of the available space of body container*/
-    overflow: hidden;/*main stays fixed and houses the aside/section that scroll*/
-}
-/* INDEX/LANDING PAGE CSS */
-#landingPageMain{
-    flex-direction: column;
-    align-items: center;
-}
-#landingPageContent{
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    background-color: rgb(197, 211, 205);
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
-    color:rgb(61, 75, 70);
-    padding: 2rem 3.5rem;
-    border-radius: 1rem;
+    height: 100vh;
+    overflow: hidden;
 }
 
-#landingPageHeader{
-    font-size: 6rem;
-    font-weight:200;
-    margin:0;
-    padding: 0;
-    color: white;
-    
+a {
+    text-decoration: none;
 }
 
-
-#landingPagecurrentDateTime{
-    align-self: flex-end;
-}
-#landingPageTagline{
-    margin: 0;
-}
-.landingSubtext{
-    margin: 2rem;
-}
-.modalButtonsDiv{
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-/*sign in/log in modals*/
-#overlayWrapper{
-  position: fixed; /* Sit on top of the page content */
-  display: none; 
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  inset: 0;
-  background-color: rgba(237, 248, 241, 0.5); /* Black background with opacity */
-  z-index: 11; 
-}
-.modal{
-    display: none;
-    padding: 0.5rem;
-    background-color: rgb(61, 75, 70);
-    border: 0.1rem solid white;
-    border-radius: 1rem;
-    font-size: 0.5rem;
-    align-self: center;
-    z-index: 12;
-    box-shadow: 0.5rem 0.5rem 0.8rem rgb(133, 146, 146);
-    /* The important part */
-    max-width: 90vw;
-    max-height: 90vh;
-    overflow: auto;
-    box-sizing: border-box;
-}
-.topContent{
-    display: flex;
-    justify-content: space-between;
-}
-.topContent h3{
-    color: white;
-    font-size: 1rem;
-}
-.modalContent{
-    min-width:0;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    align-self: center;
-    font-size: 2em;
-    gap: 0.5rem;
-    color: white;
-    margin: 2rem;
-    
-}
-
-/*password eye icons*/
-.passwordWrap{
-    position: relative;
-}
-.reenterPasswordWrap{
-    position: relative;
-}
-
-#showPasswordBtn, #showReenterPasswordBtn{
-    position: absolute;
-    top: 50%;
-    margin: 0;
-    right: 1.25rem;
-    transform: translateY(-50%);
-    width: 1.25rem;
-     border-style: none;
-    background-color: rgba(0,0,0,0);
-    box-shadow: none;
-   
-}
-
-.closeButton, .submit{
-    color: rgb(61, 75, 70);
-    font-weight: 400;
-    background-color: rgb(197, 211, 205);
-    border: 1px white solid;
-    border-radius: 0.5rem;
-    font-size: 1rem; 
-    padding: 0.5rem 0.75rem;
-}
-.closeButton:hover, .submit:hover{
-    box-shadow: 0.5rem 0.5rem 0.8rem rgb(23, 29, 27);
-}
-
-.closeButton{
-    justify-self: flex-end;
-    
-}
-.submit{
-    align-self: center;
-    padding: 0.5em;
-}
-.modalContent h2{
-    font-size: 2rem;
-    font-weight: 200;
-}
-#aignUpHeader{
-    color: white;
-}
-#signUpDetails, #loginDetails{
-   text-align: center;
-   margin: 0.75rem;
-   display: flex;
-   flex-direction: column;
-   max-width: 70vw;
-}
-#signUpDetails{
-    display:flex;
-}
-#signUpDetails input{
-    margin-bottom: 0.5rem;
-    border-radius: 0.5rem;
-}
-input[type="text"]{
-    padding: 0.2rem 1rem;
-}
-input[type="password"]{
-    padding: 0.2rem 2rem 0.2rem 1rem;
-}
-
-#avatars{
-    display:flex;
-    justify-content: space-evenly;
-    gap: 2rem;
-}
-#avatars>*{
-    font-size: 3rem;
-    opacity: 0.5;
-}
-#avatars>*:hover{
-    font-size: 3.25rem;
-    opacity: 1;
-    transition: 0.2s ease;
-    text-shadow: 0.5rem 0.5rem 0.95rem rgb(34, 43, 43);
-;
-}
-
-aside{
-    background-color: rgb(77, 111, 99);
-    display: flex;
-    justify-content: space-evenly;
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
-    
-}
-section{
-    overflow-y: auto;
-    background-color: #f5f5f7;
-}
-.logo{
-    font-size: 1.5rem;
-    flex: 1 1 0;
-}
-.nav-bar{
-    display: flex;
-    gap: 1rem;
-    list-style-type: none;
-    padding: 0.5rem;
-    flex-shrink: 1;
-}
-a{
-     text-decoration: none;
-
-}
-.nav-bar a{
-    color: white;   
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.5rem;
-}
-.nav-bar a:hover{
-    font-weight: 400;
-    background-color: rgb(41, 46, 45);
-    transition: 0.05s ease;
-}
-
-button{
+button {
     padding: 0.5rem 0.75rem;
     font-size: 1em;
     font-weight: 200;
     color: white;
     background-color: rgb(61, 75, 70);
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
     border-radius: 0.5rem;
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
+    border: none;
+    cursor: pointer;
 }
-.closeButton:hover, .submit:hover, button:hover{
+
+button:hover {
     background-color: rgb(35, 43, 40);
     transition: 0.1s ease;
+}
+
+/* =========================================
+   HEADER & FOOTER
+========================================= */
+
+header,
+footer {
+    position: sticky;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
     color: white;
+    background-color: rgb(61, 75, 70);
 }
 
-/*DASHBOARD*/
-
-#dashboardPageHeader{
-    margin: 0;
-}
-#dashboardWorkspace{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#dashboardSideBar{
-    display: flex;
+header {
     justify-content: space-between;
-    align-items: center;
-
+    top: 0;
 }
-#dashboardToolKit{
-    display: flex;
-    gap: 0.5rem;
-    align-items: baseline;
-   
 
+footer {
+    justify-content: center;
+    bottom: 0;
 }
-.btnRemoveStyle{
-    border-style: none;
-    background-color: rgba(0,0,0,0);
-    padding: 0.25rem 0.5rem;
+
+.logo {
+    font-size: 1.5rem;
+    flex: 1 1 0;
+}
+
+.currentDateTime {
     margin: 0.5rem;
-    box-shadow: none;
-
-}
-.toggleSideBarBtn{
-   
-    justify-self: flex-end;
-
+    font-size: 1.25rem;
 }
 
-.dashboardTool{
-    list-style-type: none;
-    border-radius: 0.5rem;
-    margin: 0.25rem;
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav-bar {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
     padding: 0.5rem;
 }
 
-.dashboardWidget{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(194, 209, 202);
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
-    border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem; 
-}
-.smallerWidget{
-    max-width:max-content;
-    min-width: min-content;
-
-
+.nav-bar a {
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
 }
 
-.widgetInfoBtn{
-    align-self: flex-end;
-    position: relative;
-    border-radius: 100%;
-    background-color: white;
-    color: rgb(41, 46, 45);
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78); 
-    padding: 0.25rem 0.75rem;
-}
-.widgetInfoBtn:hover{
-    background-color: rgb(119, 132, 132);
-}
-.widgetInfoBtn:hover .widgetInstructions{
-    display: block;
-    
-}
-.widgetInstructions{
-    border-radius: 1rem;
-    display: none;                   
-    transition: 0.3s ease;  /* fade */
-    position: absolute;/*enables floating above the widget instead of stretching widget container*/
-    bottom: 100%;
-    right: 0;
-    z-index:10;
-    background-color: #f5f5f7;
-    color:rgb(71, 78, 78);
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78); 
-    padding: 0.25rem;
-    width: 50vw;
-}
-#progressTable, #progressTableWidget, #progressTableBody{
-    min-width: 0;
-    border-radius: 1rem;
-    margin: 1.5rem;
-}
-#progressTable{
-    margin-top: 0;
-}
-#progressTable td{
-    border-radius: 2rem;
-
-} 
-#progressTableWidget{
-    max-width: 90%;
-
-}
-#progressTableBody input[type="text"],
-#progressTableBody input[type="date"],
-#progressTableBody select {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 4px 2px;
-    font: inherit;
-    color: inherit;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-}
-
-#progressTableBody input:focus,
-#progressTableBody select:focus{
-     outline: none;
-    border-bottom: 1px solid #999;
-
-}
-#progressTableButtons{
-    display: flex;
-    gap: 0.75rem;
-}
-
-hgroup{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.pageHeader{
-    font-size: 3.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    margin: 1rem;
-}
-
-
-
-nav-bar a, #dashboardToolKit label:hover, button:hover{
-    font-weight: 200;
+.nav-bar a:hover {
     background-color: rgb(41, 46, 45);
-    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78);
     transition: 0.1s ease;
 }
-.subheading{
-    margin: 1rem;
-} 
-/* 03-TABLES*/
-table{
-  background-color: white;
-  border-collapse: collapse;
-  box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78);
-  margin: 1rem;
-  width: 100%;
-  table-layout: fixed;
 
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
 }
-caption{
+
+aside {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    background-color: rgb(61, 75, 70,0.75);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.asideToolKit {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.asideTool {
+    list-style: none;
+    margin: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+section {
+    overflow-y: auto;
+    background-color: #f5f5f7;
+}
+
+hgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageHeader {
+    font-size: 3.5rem;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.subheading {
+    margin: 1rem;
+}
+
+/* =========================================
+   LANDING PAGE
+========================================= */
+
+#landingPageMain {
+    align-items: center;
+}
+
+#landingPageContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 3.5rem;
+    border-radius: 1rem;
+    background-color: rgb(197, 211, 205);
+    color: rgb(61, 75, 70);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
+}
+
+#landingPageHeader {
+    font-size: 6rem;
+    color: white;
+}
+
+.landingSubtext {
+    margin: 2rem;
+}
+
+.modalButtonsDiv {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* =========================================
+   MODALS
+========================================= */
+
+#overlayWrapper {
+    position: fixed;
+    inset: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(237, 248, 241, 0.5);
+    z-index: 11;
+}
+
+.modal {
+    display: none;
+    align-self: center;
+    padding: 0.5rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 1rem;
+    border: 0.1rem solid white;
+    background-color: rgb(61, 75, 70);
+    box-shadow: 0.5rem 0.5rem 0.8rem rgb(133, 146, 146);
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.modalContent h2 {
+    font-size: 2rem;
+}
+
+.topContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topContent h3 {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Modal Buttons */
+
+.closeButton,
+.submit {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(61, 75, 70);
+    background-color: rgb(197, 211, 205);
+    border-radius: 0.5rem;
+    border: 1px solid white;
+}
+
+.closeButton:hover,
+.submit:hover {
+    background-color: rgb(35, 43, 40);
+    color: white;
+    transition: 0.1s ease;
+}
+
+/* Password Eye Buttons */
+
+.passwordWrap,
+.reenterPasswordWrap {
+    position: relative;
+}
+
+#showPasswordBtn,
+#showReenterPasswordBtn {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+#dashboardWorkspace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggleSideBarBtn{
+    border:none;
+    box-shadow: none;
+    background-color: rgba(237, 248, 241, 0);
+    margin-left: auto; /*pushes the toggle button as far right as it can go*/
+}
+
+
+
+.dashboardWidget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(194, 209, 202);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
+}
+
+.widgetInfoBtn {
+    align-self: flex-end;
+    position: relative;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(41, 46, 45);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78);
+}
+
+.widgetInstructions {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    width: 50vw;
+    padding: 0.25rem;
+    border-radius: 1rem;
+    background-color: #f5f5f7;
+    color: rgb(71, 78, 78);
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78);
+}
+
+.widgetInfoBtn:hover .widgetInstructions {
+    display: block;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+table {
+    width: 100%;
+    margin: 1rem;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: white;
+    box-shadow: 0.5rem 0.5rem 0.95rem rgb(71, 78, 78);
+}
+
+caption {
     margin: 1%;
-    color:rgb(40, 65, 57);
     font-size: 2rem;
     font-weight: 400;
-} 
+    color: rgb(40, 65, 57);
+}
 
-td,th{
-    border-style: none;
+th,
+td {
     padding: 0.25rem;
-    flex-shrink: 1;
-    max-width: fit-content;
+    border: none;
 }
-td{
-    background-color: white;   
-}
-th{
+
+th {
     background-color: grey;
     font-weight: 400;
     text-align: center;
 }
 
-    
-            
-
-
+td {
+    background-color: white;
+}
