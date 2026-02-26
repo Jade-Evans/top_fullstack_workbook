@@ -177,6 +177,7 @@ function saveRow(row) {
     const progress = row.querySelector("td:nth-child(4) select").value;
     const dateUpdated = row.querySelector("td:nth-child(5) input").value;
     const dailyNoteChecked = row.querySelector("td:nth-child(6) input").checked;
+    const actionHeader = document.querySelector(".actionHeader");
 
     const moduleData = {
         id: crypto.randomUUID(),
@@ -201,11 +202,12 @@ function saveRow(row) {
         <td>${progress}</td>
         <td>${dateUpdated}</td>
         <td>${dailyNoteChecked ? "✓" : ""}</td>
-        <td><button class="editRowBtn">Edit</button></td>
-        <td><button class="saveChangesBtn">Save Changes</button></td>
-        <td><button class="deleteRowBtn">Delete</button></td>
-    `;
-
+        <td colspan="3">
+            <button class="editRowBtn">Edit</button>
+            <button class="saveChangesBtn">Save Changes</button>
+            <button class="deleteRowBtn">Delete</button>
+        </td>`;
+        actionHeader.colSpan = "3";
     row.querySelector(".editRowBtn").addEventListener("click", () => editRow(row));
     row.querySelector(".saveChangesBtn").addEventListener("click", () => saveChanges(row));
     row.querySelector(".deleteRowBtn").addEventListener("click", () => deleteRow(row));
