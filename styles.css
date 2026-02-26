@@ -195,7 +195,6 @@ hgroup {
 /* =========================================
    MODALS
 ========================================= */
-
 #overlayWrapper {
     position: fixed;
     inset: 0;
@@ -205,7 +204,6 @@ hgroup {
     background-color: rgba(237, 248, 241, 0.5);
     z-index: 11;
 }
-
 .modal {
     display: none;
     align-self: center;
@@ -218,7 +216,6 @@ hgroup {
     background-color: rgb(61, 75, 70);
     box-shadow: 0.5rem 0.5rem 0.8rem rgb(133, 146, 146);
 }
-
 .modalContent {
     display: flex;
     flex-direction: column;
@@ -228,7 +225,6 @@ hgroup {
     text-align: center;
     color: white;
 }
-
 .modalContent h2 {
     font-size: 2rem;
 }
@@ -242,7 +238,35 @@ hgroup {
     font-size: 1rem;
     color: white;
 }
+.modalDataInput{
+    display: flex;
+    flex-direction: column;
+    
+}
+ input[type="text"], input[type="password"], input[type="date"], select{
+    margin: 1rem;
+    border:none;
+    text-align: center;
+    
+} 
+#signUpModalDataInput label{
+    display: flex;
+    flex-direction: column;
 
+}
+.passwordContainer{
+    position:relative;
+}
+
+#avatars{
+    display: flex;
+    gap: 1rem;
+    font-size: 3rem;
+}
+.avatarSelection:hover{
+      box-shadow: 0.5rem 0.5rem 0.95rem rgb(133, 146, 146);
+
+}
 /* Modal Buttons */
 
 .closeButton,
@@ -264,12 +288,6 @@ hgroup {
 }
 
 /* Password Eye Buttons */
-
-.passwordWrap,
-.reenterPasswordWrap {
-    position: relative;
-}
-
 #showPasswordBtn,
 #showReenterPasswordBtn {
     position: absolute;
@@ -363,6 +381,7 @@ th,
 td {
     padding: 0.25rem;
     border: none;
+    text-align: center;
 }
 
 th {
