@@ -48,32 +48,28 @@
           <div class="modalContent">
             <h2 id="signUpHeader">Create your account</h2>
             <p>Simply enter your details and select an Avatar to begin:</p>
-            <div id="signUpDetails">
-              <label>Username:</label>
-              <input type="text" id="username" name="username" placeholder="Please enter username"/>
-              <label>Email:</label>
-              <input type="text" id="email" name="email"  placeholder="Please enter email"/>
-              <label>Create Password:</label>
-              <div class="passwordWrap">
-                <input type="password" id="password" name="password" placeholder="Enter Password here"/>
-                <button type="button" id="showPasswordBtn">
-                  <img src="visiblePwd.png" alt="icon password visible">
-                </button>
-              </div>
-              <label>Re-enter Password:</label>
-              <div class="reenterPasswordWrap">
-                <input type="password" id="reenterPassword" name="reenterPassword" name="reenterPassword"/>
-                <button type="button" id="showReenterPasswordBtn">
-                  <img src="visiblePwd.png" alt="icon password visible">
-                </button>
-              </div>
+            <div Id="signUpModalDataInput" class="modalDataInput">
+              <label>Username:<input type="text" id="username" name="username" size="25"/></label>
+              <label>Email:<input type="text" id="email" name="email" size="25"/></label>
+              <label>Create Password:
+                <div class="passwordContainer">
+                  <input type="password" id="password" name="password" size="30"/>
+                  <img src="visiblePwd.png" alt="icon password visible"/>
+                </div>
+              </label>
+              <label>Re-enter Password:
+                  <div class="passwordContainer">
+                    <input type="password" id="reenterPassword" name="reenterPassword" size="30">
+                    <img src="visiblePwd.png" id="reEnterPwdVisibleIcon" alt="icon password visible" >
+                  </div>
+              </label>
             </div>
             <div id="avatars">
-              <div id="seedlingAvatar">🌱</div>
-              <div id="fern">🌿</div>
-              <div id="tree">🌳</div>
-              <div id="wildflower">🌼</div>
-              <div id="cactus">🌵</div>
+              <div id="seedlingAvatar" class="avatarSelection">🌱</div>
+              <div id="fern"  class="avatarSelection">🌿</div>
+              <div id="tree"  class="avatarSelection">🌳</div>
+              <div id="wildflower"  class="avatarSelection">🌼</div>
+              <div id="cactus"  class="avatarSelection">🌵</div>
             </div>
             <button type="submit" id="createAccountSubmitBtn" class="submit">Submit</button>
           </div>
