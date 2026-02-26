@@ -69,7 +69,6 @@ const modalController = {
     open(modalName) {
         this.overlay.style.display = "flex";
         this.overlay.style.justifyContent = "center";
-
         this.modals[modalName].style.display = "flex";
         this.modals[modalName].style.flexDirection = "column";
         this.modals[modalName].style.justifyContent = "center";
@@ -202,14 +201,12 @@ function saveRow(row) {
         <td>${progress}</td>
         <td>${dateUpdated}</td>
         <td>${dailyNoteChecked ? "✓" : ""}</td>
-        <td colspan="3">
+        <td colspan="2">
             <button class="editRowBtn">Edit</button>
-            <button class="saveChangesBtn">Save Changes</button>
             <button class="deleteRowBtn">Delete</button>
         </td>`;
-        actionHeader.colSpan = "3";
+        actionHeader.colSpan = "2";
     row.querySelector(".editRowBtn").addEventListener("click", () => editRow(row));
-    row.querySelector(".saveChangesBtn").addEventListener("click", () => saveChanges(row));
     row.querySelector(".deleteRowBtn").addEventListener("click", () => deleteRow(row));
 }
 
@@ -230,9 +227,10 @@ stored.forEach(module => {
         <td>${module.progress}</td>
         <td>${module.dateUpdated}</td>
         <td>${module.dailyNoteChecked ? "✓" : ""}</td>
-        <td><button class="editRowBtn">Edit</button></td>
-        <td><button class="saveChangesBtn">Save Changes</button></td>
-        <td><button class="deleteRowBtn">Delete</button></td>
+        <td>
+            <button class="editRowBtn">Edit</button>
+            <button class="deleteRowBtn">Delete</button>
+        </td>
     `;
 
     row.dataset.id = module.id;
@@ -254,9 +252,40 @@ function editRow(row) {
     rowCells[3].innerHTML = `<input value=${rowCells[3].textContent}>`;
     rowCells[4].innerHTML = `<input value=${rowCells[4].textContent}>`;
     rowCells[5].innerHTML = `<input value=${rowCells[5].textContent}>`;
+    rowCells[6].innerHTML = `<button class="saveChangesBtn">Save Changes</button><button class="deleteRowBtn">Delete</button>`
+    row.querySelector(".deleteRowBtn").addEventListener("click", () => deleteRow(row));
 }
 
-function saveChanges(row) {}
+function saveChanges(row) {
+    const moduleData = {
+        id: crypto.randomUUID(),
+        moduleName,
+        section,
+        course,
+        progress,
+        dateUpdated,
+        dailyNoteChecked
+    };
+
+    const stored = JSON.parse(localStorage.getItem("modules")) || [];
+    stored.push(moduleData);
+    localStorage.setItem("modules", JSON.stringify(stored));
+
+    row.dataset.id = moduleData.id;
+    
+     row.innerHTML = `
+        <td><a href="modules_template.html?moduleId=${moduleData.id}">${moduleName}<</td>
+        <td>${section}</td>
+        <td>${course}</td>
+        <td>${progress}</td>
+        <td>${dateUpdated}</td>
+        <td>${dailyNoteChecked ? "✓" : ""}</td>
+        <td colspan="2">
+            <button class="saveChangeBtn">Save Changes</button>
+            <button class="deleteRowBtn">Delete</button>
+        </td>`;
+
+}
 
 function deleteRow(row) {
     const id = row.dataset.id;

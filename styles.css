@@ -210,7 +210,6 @@ hgroup {
     padding: 0.5rem;
     max-width: 90vw;
     max-height: 90vh;
-    overflow: auto;
     border-radius: 1rem;
     border: 0.1rem solid white;
     background-color: rgb(61, 75, 70);
@@ -221,9 +220,10 @@ hgroup {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    margin: 2rem;
+    margin: 1rem;
     text-align: center;
     color: white;
+    position:relative;
 }
 .modalContent h2 {
     font-size: 2rem;
@@ -244,7 +244,7 @@ hgroup {
     
 }
  input[type="text"], input[type="password"], input[type="date"], select{
-    margin: 1rem;
+    margin: 0.5rem;
     border:none;
     text-align: center;
     
@@ -268,7 +268,12 @@ hgroup {
 
 }
 /* Modal Buttons */
+.closeButton{
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
 
+}
 .closeButton,
 .submit {
     padding: 0.5rem 0.75rem;
@@ -278,6 +283,8 @@ hgroup {
     background-color: rgb(197, 211, 205);
     border-radius: 0.5rem;
     border: 1px solid white;
+    box-shadow: none;
+    
 }
 
 .closeButton:hover,
